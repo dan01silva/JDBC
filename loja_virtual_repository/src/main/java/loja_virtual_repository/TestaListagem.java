@@ -1,9 +1,9 @@
 package loja_virtual_repository;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class TestaListagem {
 
@@ -13,16 +13,16 @@ public class TestaListagem {
 
 		Connection conn = connectionFactory.recuperarConexao();
 
-		Statement stm = conn.createStatement();
+		PreparedStatement pst = conn.prepareStatement("Select * from PRODUTO");//evitando sql INjection
 		
 		/**
 		 *  O método devolve true quando o seu resultado é um java.sql.ResultSet
 			e false caso contrário (update, delete, etc)
 		 */
-		boolean resultado = stm.execute("Select * from PRODUTO");
+		boolean resultado = pst.execute();
 		System.out.println(resultado);
 
-		ResultSet rts = stm.getResultSet();// retortando resultados da lista
+		ResultSet rts = pst.getResultSet();// retortando resultados da lista
 
 		while (rts.next()) {
 			Integer id = rts.getInt("id");
