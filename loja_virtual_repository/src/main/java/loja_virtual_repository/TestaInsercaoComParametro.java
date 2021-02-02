@@ -27,8 +27,6 @@ public class TestaInsercaoComParametro {
 
 				conn.commit();
 
-				pst.close();
-				conn.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 				System.out.println("ROLLBACK EXECUTADO");
