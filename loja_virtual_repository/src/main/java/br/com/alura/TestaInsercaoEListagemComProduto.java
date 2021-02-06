@@ -1,10 +1,11 @@
-package loja_virtual_repository;
+package br.com.alura;
 
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 
 import DAO.ProdutoDAO;
+import factory.ConnectionFactory;
 import modelo.Produto;
 
 public class TestaInsercaoEListagemComProduto {

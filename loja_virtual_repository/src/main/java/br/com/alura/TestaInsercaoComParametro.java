@@ -1,10 +1,12 @@
-package loja_virtual_repository;
+package br.com.alura;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import factory.ConnectionFactory;
 
 public class TestaInsercaoComParametro {
 
@@ -38,9 +40,8 @@ public class TestaInsercaoComParametro {
 	public static void adicionarVariavel(String nome, String descricao, PreparedStatement pst) throws SQLException {
 		pst.setString(1, nome);
 		pst.setString(2, descricao);
-		if (nome.equals("Rádio")) {
-			throw new RuntimeException("Não foi possivel adicionar o produto ");
-		}
+//		if (nome.equals("Rádio")) {
+//			throw new RuntimeException("Não foi possivel adicionar o produto ");}
 		pst.execute();
 
 		try (ResultSet rts = pst.getGeneratedKeys()) {

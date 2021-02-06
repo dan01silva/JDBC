@@ -8,7 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import loja_virtual_repository.ConnectionFactory;
+import factory.ConnectionFactory;
+import modelo.Categoria;
 import modelo.Produto;
 
 public class ProdutoDAO {// Data Access Object - CLASSE DAO (persistência)
@@ -39,9 +40,30 @@ public class ProdutoDAO {// Data Access Object - CLASSE DAO (persistência)
 
 	public List<Produto> listar() throws SQLException {
 		List<Produto> produtos = new ArrayList<Produto>();
+		System.out.println(0);
+		
 		String isertSql = " INSERT INTO PRODUTO(NOME,DESCRICAO) VALUE(? , ?)";
 
 		try (PreparedStatement pst = connection.prepareStatement(isertSql)) {
+			pst.execute();
+
+			try (ResultSet rts = pst.getResultSet()) {
+				while (rts.next()) {
+					Produto novoProduto = new Produto(rts.getInt(1), rts.getString(2), rts.getString(3));
+					produtos.add(novoProduto);
+				}
+			}
+		}
+		return produtos;
+	}
+
+	public List<Produto> buscar(Categoria ct) throws SQLException {
+		List<Produto> produtos = new ArrayList<Produto>();
+
+		String isertSql = " SELECT * FROM PRODUTO WHERE CATEGORIA_ID = ?";
+
+		try (PreparedStatement pst = connection.prepareStatement(isertSql)) {
+			pst.setInt(1, ct.getId());
 			pst.execute();
 
 			try (ResultSet rts = pst.getResultSet()) {

@@ -1,9 +1,11 @@
-package loja_virtual_repository;
+package br.com.alura;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import factory.ConnectionFactory;
 
 public class TestaInsercao {
 
