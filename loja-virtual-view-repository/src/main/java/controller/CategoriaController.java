@@ -17,8 +17,6 @@ public class CategoriaController {
 		this.categoriaDAO = new CategoriaDAO(conn);
 	}
 	
-	
-
 	public List<Categoria> listar(){
 			return this.categoriaDAO.listar();
 	}
