@@ -8,8 +8,9 @@ import java.sql.SQLException;
 public class ContaDao {
     private Connection conn;
 
+    
     public ContaDao() {
-        try {
+        try { //connector mysql
             this.conn = DriverManager.getConnection("mysql://localhost/alura_jdbc", "admin", "admin@");
         } catch (SQLException e) {
             throw new RuntimeException(e);

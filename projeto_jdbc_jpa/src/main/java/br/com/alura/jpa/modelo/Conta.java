@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Conta {
+public class Conta {//representação de uma Entidade
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	private Integer id;
