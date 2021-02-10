@@ -10,7 +10,7 @@
 		<class>br.com.alura.jpa.modelo.Conta</class>
 
 		<properties>
-			<!-- dados da conexao -->
+			<!-- dados da conexao com o banco -->
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/alura_jpa" />
 			<property name="javax.persistence.jdbc.user" value="admin" />
