@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 public class TesteCriaTabelas {
 	public static void main(String[] args) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("contas");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("alura");
 		try {
 			EntityManager createEntityManager = emf.createEntityManager();	
 		} catch (Exception e) {
