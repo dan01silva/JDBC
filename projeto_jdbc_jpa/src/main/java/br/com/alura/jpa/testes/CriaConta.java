@@ -13,10 +13,11 @@ public class CriaConta {
 		EntityManager em = emt.createEntityManager();
 
 		Conta conta = new Conta();
-		conta.setTitular("Amanda");
+		conta.setCliente("Leonardo");
 		conta.setAgencia(1234);
 		conta.setNumero(123456);
 
+	
 		em.getTransaction().begin();
 
 		em.persist(conta);

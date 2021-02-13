@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Conta {
@@ -12,16 +13,20 @@ public class Conta {
 	private Long id;
 	private Integer agencia;
 	private Integer numero;
-	private String titular;
 	private Double saldo;
+	private String cliente;
+	//private Cliente cliente;
+	
+
 	
 	public Conta() {
 	}
 
-	public Conta(Integer agencia, Integer numero, String titular) {
+	public Conta(Integer agencia, Integer numero, Double saldo, String nomeCliente) {
 		this.agencia = agencia;
 		this.numero = numero;
-		this.titular = titular;
+		this.saldo = saldo;
+		this.cliente = nomeCliente;
 	}
 	
 	public Double getSaldo() {
@@ -44,12 +49,12 @@ public class Conta {
 		return numero;
 	}
 
-	public String getTitular() {
-		return titular;
+	public String getCliente() {
+		return cliente;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long i) {
+		this.id = i;
 	}
 
 	public void setAgencia(Integer agencia) {
@@ -60,8 +65,8 @@ public class Conta {
 		this.numero = numero;
 	}
 
-	public void setTitular(String titular) {
-		this.titular = titular;
+	public void setCliente(String nomeCliente) {
+		this.cliente = nomeCliente;
 	}
 	
 	

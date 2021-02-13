@@ -12,7 +12,7 @@ public abstract class TestandoEstados {
 		
 		Conta conta = new Conta();
 		//Transient
-		conta.setTitular("Almir");
+		conta.setCliente("Almir");
 		conta.setAgencia(5678);
 		conta.setNumero(112345);
 		conta.setSaldo(200.0);

@@ -7,7 +7,9 @@
 	<persistence-unit name="alura">
 		<!-- provedor/implementacao do JPA -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!-- Persistencia das entidades no JPA -->
 		<class>br.com.alura.jpa.modelo.Conta</class>
+		<class>br.com.alura.jpa.modelo.Movimentacao</class>
 
 		<properties>
 			<!-- dados da conexao com o banco -->

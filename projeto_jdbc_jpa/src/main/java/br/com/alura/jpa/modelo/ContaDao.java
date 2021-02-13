@@ -23,7 +23,7 @@ public class ContaDao {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setLong(1, conta.getAgencia());
             ps.setLong(2, conta.getNumero());
-            ps.setString(3, conta.getTitular());
+            ps.setString(3, conta.getCliente());
 
             ps.execute();
             
