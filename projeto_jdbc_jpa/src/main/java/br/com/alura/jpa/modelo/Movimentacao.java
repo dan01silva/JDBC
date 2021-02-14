@@ -2,7 +2,9 @@ package br.com.alura.jpa.modelo;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Formatter;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -81,7 +83,11 @@ public class Movimentacao {
 	}
 
 	public void setCategoria(List<Categoria> categorias) {
-		this.categorias = categorias;
+		this.categorias = categorias; 
 	}
-
+	
+	@Override
+	public String toString() {
+		return "ID: " + this.id + " Valor:" + this.valor + " Tipo de movimentação" + this.tipoMovimentacao + " Data e hora " + this.data ;
+	}
 }
