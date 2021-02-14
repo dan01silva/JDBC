@@ -1,9 +1,12 @@
 package br.com.alura.jpa.modelo;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -15,7 +18,8 @@ public class Conta {
 	private Integer numero;
 	private Double saldo;
 	private String cliente;
-	//private Cliente cliente;
+	@OneToMany(mappedBy = "conta") //direcionamento BIdirecional
+	private List<Movimentacao> movimentacoes ;
 	
 
 	
@@ -67,6 +71,11 @@ public class Conta {
 
 	public void setCliente(String nomeCliente) {
 		this.cliente = nomeCliente;
+	}
+
+	public List<Movimentacao> getMovimentacoes() {
+		// TODO Auto-generated method stub
+		return movimentacoes;
 	}
 	
 	
